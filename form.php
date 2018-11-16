@@ -8,11 +8,11 @@
 session_start();
 $nom = $_POST['nom']??$_GET['nom']??'y a rien';
 $prenom = $_POST['prenom']??$_GET['prenom']??'y a rien';
-
+// On vérifie si la session contient le tableau ou si c'est la première visite
 if (isset($_SESSION['users'])){
     $mesUsers = $_SESSION['users'];
     //
-
+    //Si l'utilisateur existe déjà on en l'ajoute pas
     if(isset($mesUsers[$nom])){
         $message = "User existant";
         $_SESSION['error']=$message;

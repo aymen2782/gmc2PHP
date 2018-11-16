@@ -25,10 +25,12 @@ if(!isset($_SESSION['connectedUser'])){
     <body>
         <h1>Home</h1>
         <?php
+        // si on a un message on l'affiche
         if(isset($_SESSION['success'])){
         ?>
         <h2>Bienvenu <?= $user['prenom'].' '.$user['nom']  ?></h2>
         <?php
+           // et on le supprime de la session pour qu'il apparaisse une seule fois
            unset($_SESSION['success']);
         } ?>
 
